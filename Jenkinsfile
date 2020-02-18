@@ -19,7 +19,6 @@ pipeline {
         stage('test') {
           steps {
             sh 'mvn test'
-            warnError(message: 'failure')
           }
         }
 
