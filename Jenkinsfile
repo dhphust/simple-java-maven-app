@@ -27,4 +27,12 @@ pipeline {
             }
         }
     }
+    post {
+      always {
+	emailext 
+		body: '$BUILD_STATUS!', 
+		subject: '构建通知-$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', 
+		to: 'enzohust@163.com'
+  }
+}
 }
