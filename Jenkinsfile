@@ -29,11 +29,7 @@ pipeline {
     }
     post {
       always {
-	emailext (
-		subject: '构建通知-$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', 
-		body: 'output connent...',
-		to: 'enzohust@163.com'
-		)
+	emailext body: 'output connent...', subject: '构建通知-$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', to: 'enzohust@163.com'
   }
 }
 }
